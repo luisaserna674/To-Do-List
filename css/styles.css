@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Barra de navegación */
+.encabezado {
+    padding: 5px;
+    /* background-color: red; */
+    position: static;
+    border-bottom: 2px solid #ededed;
+    height: 40px;
+    align-content: center;
+}
+
+.menu_busqueda {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    /* background-color: blue; */
+    height: 100%;
+}
+
+/* Contenedor de tareas */
+.contenido_principal {
+    margin-block: 10px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    align-items: stretch;
+    justify-content: space-around;
+    /* padding: 15px; */
+}
+
+.contenido_principal small {
+    color: #abb2b8;
+    font-weight: 600;
+}
+
+.tareas_hoy,
+.tareas_manana {
+    /* background-color: red; */
+    padding: 15px;
+}
+
+.tareas_hoy_botones,
+.tareas_manana_botones {
+    /* background-color: aqua; */
+    height: 50px;
+    padding-block: 10px;
+    align-content: center;
+    border-bottom: 2px solid #ededed;
+    margin-block: 20px;
+}
+
+.tareas_hoy_botones button,
+.tareas_manana_botones button {
+    border-radius: 20px;
+    background-color: #eceff3;
+    border: none;
+    padding: 10px;
+    margin-inline: 2px;
+    color: #30302d;
+}
+
+.tareas_hoy_botones button:active,
+.tareas_manana button:active,
+.tareas_hoy_botones button:hover,
+.tareas_manana_botones button:hover {
+    color: #e0e0e0;
+    background-color: #292929;
+    cursor: pointer;
+}
+
+/* estilos que se repiten en cada card agregada */
+.tareas_hoy .card_tarea_hoy,
+.tareas_manana .card_tarea_manana {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ededed;
+    /* background-color: pink; */
+}
+
+.buttons {
+    display: flex;
+    flex-flow: nowrap;
+}
+
+.card_tarea_hoy input,
+.card_tarea_manana input {
+    width: 30px;
+    transform: scale(2.5);
+    border: none;
+}
+
+.card_tarea_hoy button,
+.card_tarea_manana button {
+    margin-inline-end: 4px;
+    background-color: #eceef3;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.card_tarea_hoy button:hover,
+.card_tarea_manana button:hover {
+    background-color: #767676;
+    transform: scale(1.2);
+}
+
+.save_buton_alert {
+    /* creamos la animación de escalado para el botón guardar */
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: scale_save 1s ;
+    animation-iteration-count: 5;
+}
+
+@keyframes scale_save {
+    50%{
+        transform: scale(1.2);
+    }
+}
+
+.card_content {
+    /* background-color: red; */
+    margin-block: 15px;
+    margin-inline-start: 20px;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+span{
+    font-size: x-small;
+    color: red;
+}
+
+.buscador {
+    padding: 5px;
+    background-color: #f0f2f7;
+    align-content: center;
+    padding-inline-start: 10px;
+    border-radius: 20px;
+    width: 200px;
+    height: 25px;
+}
+
+.buscador img {
+    align-content: center;
+    padding-inline-end: 5px;
+}
+
+#buscador,
+#buscador:focus,
+#buscador:active {
+    background-color: #f0f2f7;
+    border: none;
+
+}
+
+/* Footer */
+footer {
+    background-color: #292929;
+    /* position: fixed; */
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    color: white;
+    font-size: small;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    color: #abb2b8;
+    text-decoration: underline;
+}
+
+footer ul li {
+    list-style: none;
+    margin-block: 5px;
+}
+
+.linkedin,
+.instagram {
+    display: flex;
+    align-items: center;
+}
+
+.linkedin img,
+.instagram img {
+    margin-inline-end: 5px;
+}
+
+/* Diseño tablet */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Contenedor de tareas */
+
+    .contenido_principal {
+        flex-direction: row;
+        align-items: stretch;
+        /* height: 100%; */
+        /* background-color: red; */
+    }
+
+    .tareas_hoy{
+        width: 50%;
+        height: 100%;
+        /* background-color: blue; */
+    }
+
+    .tareas_manana{
+        width: 50%;
+        height: 100%;
+        /* background-color: pink; */
+    }
+    main{
+        height: 100vh;
+    }
+    
+    .container_body{
+        height: 100%;
+        /* background-color: aqua; */
+    }
+    
+
+}
+
+/* Diseño para pc */
+
+@media screen and (min-width: 1024px) {
+   
+    main{
+        height: 100vh;
+    }
+    
+    .container_body{
+        height: 100%;
+        /* background-color: aqua; */
+    }
+
+    
+     .contenido_principal{
+        flex-direction: row;
+        margin-block-start: 0;
+    }
+
+    .tareas_hoy{
+        width: 50%;
+        height: 100%;
+        /* background-color: blue; */
+    }
+
+    .tareas_manana{
+        width: 50%;
+        height: 100%;
+        /* background-color: #f1f3f8; */
+    }
+
+}

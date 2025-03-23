@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./node_modules/izitoast/dist/css/iziToast.min.css">
+
+    <title>To-do list</title>
+</head>
+
+<body>
+    <div class="container_body">
+
+        <!-- Barra de búsqueda y encabezado -->
+        <header class="encabezado">
+            <div class="menu_busqueda">
+                <img src="./assets/images/logo.png" width="30px" alt="logo" class="logo">
+                <nav>
+                    <label for="search"></label>
+                    <div class="buscador">
+                        <img src="./assets/images/search.png" alt="Buscar" width="10px">
+                        <input type="search" id="buscador" name="search" placeholder="Buscar tareas...">
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- lista de tareas -->
+        <main class="contenido_principal">
+
+            <!-- Tareas día actual -->
+            <section class="tareas_hoy">
+                <h2>Hoy</h2>
+                <small id="fecha_actual"></small>
+                <div class="tareas_hoy_botones">
+                    <button onclick="crearTarea(1)" type="button">Crear tarea</button>
+                    <button onclick="eliminarTareas(1)" type="button">
+                        Eliminar tareas</button>
+                </div>
+                <div id="card_container_hoy">
+                    <div class="card_tarea_hoy">
+                        <div class="check">
+                            <input type="checkbox" name="tarea" id="tarea">
+                        </div>
+                        <div class="card_content">
+                            <h3>Título tarea</h3>
+                            <span>No se permiten más de 35 caracteres</span>
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            <span>No se permiten más de 35 caracteres</span>
+
+                        </div>
+                        <div class="buttons">
+                            <button type="button">
+                                <img src="./assets/images/trash.png" alt="trash" width="20px">
+                            </button>
+                            <button type="button">
+                                <img src="./assets/images/pencil.png" alt="trash" width="20px">
+                            </button>
+                        </div>
+                    </div> 
+                </div>
+            </section>
+
+            <!-- Tareas día de mañana -->
+            <section class="tareas_manana">
+                <h2>Mañana</h2>
+                <small id="fecha_proxima">Fecha mañana</small>
+                <div class="tareas_manana_botones">
+                    <button onclick="crearTarea(2)" type="button">Crear tarea</button>
+                    <button onclick="eliminarTareas(2)" type="button">
+                        Eliminar tareas</button>
+                </div>
+                <div id="card_container_manana">
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <!-- <footer>
+        <div class="redes">
+            Redes:
+            <ul>
+                <li>
+                    <div class="linkedin">
+                        <img src="./assets/images/linkedin.png" alt="LinkedIn" width="20px">
+                        <a href="https://www.linkedin.com/in/luisa-fernanda-serna-mosquera-7a160a324/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="instagram">
+                        <img src="./assets/images/instagram.png" alt="Instagram" width="20px">
+                        <a href="https://www.instagram.com/luisa_web1/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="informacion_adicional">
+            <ul>
+                <li>Contacto</li>
+                <li>PQRs</li>
+                <li>Servicios</li>
+            </ul>
+        </div>
+    </footer> -->
+
+        <script src="./js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+        <script src="./node_modules/izitoast/dist/js/iziToast.min.js" type="text/javascript"></script>
+    </div>
+</body>
+
+</html>
