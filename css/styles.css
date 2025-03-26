@@ -76,14 +76,22 @@
     cursor: pointer;
 }
 
+.card_content {
+    margin-block: 15px;
+    width: 100%;
+    /* margin-inline-start: 20px; */
+}
+
 /* estilos que se repiten en cada card agregada */
 .tareas_hoy .card_tarea_hoy,
 .tareas_manana .card_tarea_manana {
     display: flex;
+    column-gap: 10%;
     align-items: center;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     margin-bottom: 20px;
     border-bottom: 2px solid #ededed;
+
     /* background-color: pink; */
 }
 
@@ -128,20 +136,21 @@
     }
 }
 
-.card_content {
-    /* background-color: red; */
-    margin-block: 15px;
-    margin-inline-start: 20px;
-}
 
-h3 {
+.titulo {
     font-weight: 600;
+    /* margin-block-end: 10px; */
+    padding: 5px;
+    background-color: red;
+    width: 100%;
 }
 
-span{
-    font-size: x-small;
-    color: red;
+
+.titulo:focus, .descripcion:focus{
+    border: none;
+    outline: none;
 }
+
 
 .buscador {
     padding: 5px;
