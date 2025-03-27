@@ -148,14 +148,19 @@ function crearTarea(dia) {
     });
 
     // Resaltamos el boton de guardar
-    const save_buton = document.getElementsByClassName("save_buton")[0];
-    save_buton.style.backgroundColor = "#9edfff";
-    save_buton.className = "save_buton_alert";
+    let save_buton = document.getElementsByClassName("save_buton");
+    Array.from(save_buton).forEach((element) => {
+      element.style.backgroundColor = "#9edfff";
+      element.className = "save_buton_alert";
+    })
 
     // Despuès de 5 seg eliminamos la animaciòn del boton guardar
     setTimeout(() => {
-      save_buton.style.backgroundColor = "#eceef3";
-      save_buton.className = "save_buton";
+      Array.from(save_buton).forEach((element) => {
+        element.style.backgroundColor = "#eceef3";
+        element.className = "save_buton";
+      })
+      
     }, 5000);
   } else {
     class_name = dia == 1 ? "card_container_hoy" : "card_container_manana";
@@ -209,18 +214,20 @@ function guardarTarea() {
     // Eliminamos su clase active si se va a guardar
     tarea.className = tarea.className.replace("active", "");
     //agregamos el boton de modificar
-    debugger
     let modificar = this.parentElement.getElementsByClassName("edit_buton")[0]
     modificar.style.display = "block"
     
     console.log(contenidos);
   }
   else{
-    debugger
     //Si se va modificar, activamos el botón de guardar
     let guardar = this.parentElement.getElementsByClassName("save_buton")[0]
     guardar.style.display = "block"
-    guardar.className = "save_buton active"
+    guardar.className = "save_buton"
+
+    //Agragamos la clase activa a la card de tarea
+    tarea.className = tarea.className.concat("active");
+    console.log(tarea.className)
 
   }
 
